@@ -1,0 +1,37 @@
+/* Navbar.css */
+.navbar {
+    padding: 10px;
+    display: flex;
+  }
+  
+.navbar-logo {
+fill: white;
+height: 40px;
+width: auto;
+margin-right: auto;
+  }
+
+.navbar-list {
+    margin-left: auto; /* Push the list to the right */
+  }
+
+
+.navbar ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.navbar li {
+display: inline;
+margin-right: 20px;
+}
+
+.navbar li a {
+color: white;
+text-decoration: none;
+}
+
+.navbar li a:hover {
+color: yellow;
+}
