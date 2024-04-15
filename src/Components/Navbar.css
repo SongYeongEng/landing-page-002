@@ -14,13 +14,13 @@ margin-right: auto;
   }
 
 .navbar-list {
-    margin-left: auto; /* Push the list to the right */
+    margin-left: auto; 
   }
 
 
 .navbar ul {
 list-style-type: none;
-margin: 0;
+font-size: xx-large;
 padding: 0;
 }
 
