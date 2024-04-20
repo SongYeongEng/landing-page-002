@@ -2,8 +2,8 @@
   <defs>
     <style>
       .cls-1 {
-        font-size: 40.667px;
-        fill: #000;
+        font-size:80.667px;
+        fill: white;
         font-family: "FK Grotesk Neue Trial";
       }
     </style>

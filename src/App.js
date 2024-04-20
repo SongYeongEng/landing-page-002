@@ -1,8 +1,7 @@
 import './App.css';
 import Navbar from './Components/Navbar'; 
 import MainPage from './Components/MainPage'; 
-import Companies from './Components/Companies';
-import * as THREE from 'three'; 
+import Island from './Components/Island';
 
 function App() {
   return (
@@ -10,8 +9,8 @@ function App() {
       <header className="App-header">
       <Navbar />
       </header>
+      <Island />
       <MainPage />
-      <Companies />
     </div>
 
     

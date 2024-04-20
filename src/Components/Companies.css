@@ -1,30 +1,29 @@
 /* ImageAnimation.css */
 .companies {
-    height: 500px; /* Set the height of the container */
+    height: 300px; /* Set the height of the container */
     width: auto;
   }
   
 
 .svg-container {
-    width: 100%;
+    width: 50%;
     height: 50%;
-    background-color: whitesmoke;
+    background-color: black;
     align-items: center;
   }
   
   .moving-image {
     width: 100%; /* Adjust the width of the image as needed */
     height: auto; /* Automatically adjust the height to maintain aspect ratio */
-    animation: moveImage 5s linear infinite; /* Customize animation duration and timing function */
-    transform-origin: right center; /* Set the origin point for the animation */
+    animation: moveImage 4s linear infinite; /* Customize animation duration and timing function */
   }
   
   @keyframes moveImage {
     0% {
-      transform: translateX(100%); /* Start position (100% off the right side of the SVG) */
+      transform: translateX(450%); /* Start position (100% off the right side of the SVG) */
     }
     100% {
-      transform: translateX(-20%); /* End position (20% off the left side of the SVG) */
+      transform: translateX(-450%); /* End position (20% off the left side of the SVG) */
     }
   }
   

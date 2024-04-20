@@ -11,7 +11,7 @@ function MainPage() {
 
     // Create a new camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 0, 30); // Adjust camera position
+    camera.position.set(0, 15, 30); // Adjust camera position
     
     // Set the background color
     scene.background = new THREE.Color(0x4bb5eb); // Black color
@@ -53,7 +53,7 @@ function MainPage() {
 
     // Cleanup
     return () => {
-      // Clean up code if needed
+      renderer.dispose();
     };
   }, []); 
 
