@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/landing-page-002/static/css/main.745e16e3.css",
+    "main.js": "/landing-page-002/static/js/main.1a926079.js",
+    "static/js/453.7b7703e6.chunk.js": "/landing-page-002/static/js/453.7b7703e6.chunk.js",
+    "index.html": "/landing-page-002/index.html",
+    "static/media/ExactLogo.svg": "/landing-page-002/static/media/ExactLogo.9bc16710d40ad387a78a878e2d67ab16.svg",
+    "main.745e16e3.css.map": "/landing-page-002/static/css/main.745e16e3.css.map",
+    "main.1a926079.js.map": "/landing-page-002/static/js/main.1a926079.js.map",
+    "453.7b7703e6.chunk.js.map": "/landing-page-002/static/js/453.7b7703e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.745e16e3.css",
+    "static/js/main.1a926079.js"
+  ]
+}
