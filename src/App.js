@@ -1,15 +1,11 @@
 import './App.css';
-import Navbar from './Components/Navbar'; 
+import Companies from './Components/Companies';
 import MainPage from './Components/MainPage'; 
-import Island from './Components/Island';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <Navbar />
-      </header>
-      <Island />
+      <Companies/>
       <MainPage />
     </div>
 

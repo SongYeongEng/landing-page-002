@@ -1,39 +1,22 @@
-/* Navbar.css */
 .navbar {
-    padding: 10px;
-    display: flex;
-    width: 100%;
-    height: 100%;
-  }
-  
-.navbar-logo {
-fill: white;
-height: auto;
-width: auto;
-margin-right: auto;
-  }
-
-.navbar-list {
-    margin-left: auto; 
-  }
-
+  position: sticky;
+  top: 0;
+  background-color: rgba(250, 250, 250, 0.306,5); 
+  padding: 10px 0;
+}
 
 .navbar ul {
-list-style-type: none;
-font-size: xx-large;
-padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar li {
-display: inline;
-margin-right: 20px;
+.navbar ul li {
+  display: inline;
+  margin-right: 20px;
 }
 
-.navbar li a {
-color: white;
-text-decoration: none;
-}
-
-.navbar li a:hover {
-color: yellow;
+.navbar ul li a {
+  color: #010101;
+  text-decoration: none;
 }

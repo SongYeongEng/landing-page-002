@@ -1,18 +1,14 @@
 import React from 'react';
-import { ReactComponent as Logo } from './Logo.svg';
-import './Navbar.css'; 
+import './Navbar.css'; // Import your CSS file for styling
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="navbar"> 
-      <Logo className="navbar-logo" alt="Logo" />
-      <div className="navbar-list">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
+    <nav className="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
   );
 }
