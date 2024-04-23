@@ -24,7 +24,7 @@ function MainPage() {
     // Load GLTF model
     const loader = new GLTFLoader();
     loader.load(
-      '/scene.gltf', // Adjust the path to your GLTF model
+      process.env.PUBLIC_URL + '/models/miRoom.gltf', // Adjust the path to your GLTF model
       (gltf) => {
         scene.add(gltf.scene); // Add the loaded model to the scene
       },
