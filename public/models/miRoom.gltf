@@ -8,7 +8,8 @@
 		{
 			"name":"Scene",
 			"nodes":[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -22,9 +23,23 @@
 				2
 			],
 			"translation":[
-				0,
+				-0.21970440447330475,
+				1.7802956104278564,
+				-0.21970437467098236
+			]
+		},
+		{
+			"mesh":1,
+			"name":"Floor",
+			"scale":[
 				2,
-				0
+				2,
+				2
+			],
+			"translation":[
+				0.11551719903945923,
+				0.23103439807891846,
+				0.11551719903945923
 			]
 		}
 	],
@@ -42,6 +57,20 @@
 				"metallicFactor":0,
 				"roughnessFactor":0.5
 			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Material.001",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.21577081084251404,
+					0.10037831962108612,
+					0.03739772364497185,
+					1
+				],
+				"metallicFactor":0.17721518874168396,
+				"roughnessFactor":0.15189866721630096
+			}
 		}
 	],
 	"meshes":[
@@ -58,6 +87,20 @@
 					"material":0
 				}
 			]
+		},
+		{
+			"name":"Cube.001",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":4,
+						"NORMAL":5,
+						"TEXCOORD_0":6
+					},
+					"indices":7,
+					"material":1
+				}
+			]
 		}
 	],
 	"accessors":[
@@ -66,14 +109,14 @@
 			"componentType":5126,
 			"count":44,
 			"max":[
-				1,
-				1,
-				1
+				1.1098523139953613,
+				1.1098523139953613,
+				1.1098521947860718
 			],
 			"min":[
-				-1,
-				-1,
-				-1
+				-0.8901478052139282,
+				-0.8901478052139282,
+				-0.8901478052139282
 			],
 			"type":"VEC3"
 		},
@@ -93,6 +136,40 @@
 			"bufferView":3,
 			"componentType":5123,
 			"count":72,
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":4,
+			"componentType":5126,
+			"count":11788,
+			"max":[
+				0.9422414302825928,
+				0.015119999647140503,
+				0.9428298473358154
+			],
+			"min":[
+				-0.9422414302825928,
+				0,
+				-0.9445953369140625
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":5,
+			"componentType":5126,
+			"count":11788,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":6,
+			"componentType":5126,
+			"count":11788,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":7,
+			"componentType":5123,
+			"count":18180,
 			"type":"SCALAR"
 		}
 	],
@@ -120,11 +197,35 @@
 			"byteLength":144,
 			"byteOffset":1408,
 			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":141456,
+			"byteOffset":1552,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":141456,
+			"byteOffset":143008,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":94304,
+			"byteOffset":284464,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":36360,
+			"byteOffset":378768,
+			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":1552,
+			"byteLength":415128,
 			"uri":"miRoom.bin"
 		}
 	]
