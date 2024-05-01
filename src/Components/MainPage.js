@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three'; 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'; 
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'; 
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'; // Import OrbitControls
 
 function MainPage() {
   const threeContainer = useRef();
@@ -29,6 +29,18 @@ function MainPage() {
       process.env.PUBLIC_URL + '/models/miRoom.gltf', // Adjust the path to your GLTF model
       (gltf) => {
         scene.add(gltf.scene); // Add the loaded model to the scene
+
+      // If the GLTF file contains animations, initialize the animation mixer
+      if (gltf.animations && gltf.animations.length) {
+        mixer = new THREE.AnimationMixer(gltf.scene);
+
+        // Add all animations to the mixer
+        for (let i = 0; i < gltf.animations.length; i++) {
+          const animation = gltf.animations[i];
+          mixer.clipAction(animation).play(); // Play each animation
+        }
+      }
+  
       },
       // Progress callback (optional)
       (xhr) => {
@@ -40,29 +52,12 @@ function MainPage() {
       }
     );
 
-    // Load FBX model - Character
-    const characterLoader = new FBXLoader();
-    characterLoader.load(
-      process.env.PUBLIC_URL + '/models/walk.fbx', // Path to the character model
-      (character) => {
-        character.scale.set(0.05, 0.05, 0.05); // Adjust scale
-
-        scene.add(character); // Add the loaded character model to the scene
-
-        // Get animations
-        mixer = new THREE.AnimationMixer(character);
-        const action = mixer.clipAction(character.animations[1]); // Assuming the first animation
-        action.play();
-      },
-      undefined,
-      (error) => {
-        console.error('Error loading character FBX model', error);
-      }
-    );
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(1, 1, 1); // Adjust light position
-    scene.add(directionalLight);
+    
+    
+    // Add Orbital Controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; // Add damping for smoother rotation
+    controls.dampingFactor = 0.25; // Adjust damping factor
 
     // Animation loop
     const animate = () => {
