@@ -4,6 +4,7 @@
   background-color: white;
   width: auto;
   overflow: hidden; /* Ensure the overflow is hidden to hide the part of the image outside the container */
+  display: flex;
 }
 
 .svg-container {
@@ -14,16 +15,18 @@
 }
 
 .moving-image {
-  width: 100px; /* Adjust the width of the image as needed */
-  height: 100px; /* Set a fixed height for the image */
-  animation: moveImage 6s linear infinite; /* Customize animation duration and timing function */
-  transform: translateX(100%); /* Set initial position to start from the right */
+  width: 150px; /* Adjust the width of the image as needed */
+  height: 90px; /* Set a fixed height for the image */
+  animation: moveImage 15s linear infinite; /* Customize animation duration and timing function */
 }
+
+
+
 @keyframes moveImage {
   0% {
-      transform: translateX(1000%); /* Start position (100% off the right side of the SVG) */
+      transform: translateX(1700%); /* Start position (100% off the right side of the SVG) */
   }
   100% {
-      transform: translateX(-1000%); /* End position (100% off the left side of the SVG) */
+      transform: translateX(-1700%); /* End position (100% off the left side of the SVG) */
   }
 }
