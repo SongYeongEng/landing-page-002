@@ -1,29 +1,29 @@
-/* ImageAnimation.css */
+/* Companies.css */
 .companies {
-    height: 300px; /* Set the height of the container */
-    background-color: white;
-    width: auto;
-  }
-  
+  height: 100px; /* Set the height of the container */
+  background-color: white;
+  width: auto;
+  overflow: hidden; /* Ensure the overflow is hidden to hide the part of the image outside the container */
+}
 
 .svg-container {
-    width: auto;
-    height: 50%;
-    align-items: center;
+  width: 100%; /* Set the width of the SVG container */
+  height: 100%; /* Set the height of the SVG container */
+  display: flex; /* Use flexbox to center the image */
+  align-items: center;
+}
+
+.moving-image {
+  width: 100px; /* Adjust the width of the image as needed */
+  height: 100px; /* Set a fixed height for the image */
+  animation: moveImage 6s linear infinite; /* Customize animation duration and timing function */
+  transform: translateX(100%); /* Set initial position to start from the right */
+}
+@keyframes moveImage {
+  0% {
+      transform: translateX(1000%); /* Start position (100% off the right side of the SVG) */
   }
-  
-  .moving-image {
-    width: 100%; /* Adjust the width of the image as needed */
-    height: auto; /* Automatically adjust the height to maintain aspect ratio */
-    animation: moveImage 4s linear infinite; /* Customize animation duration and timing function */
+  100% {
+      transform: translateX(-1000%); /* End position (100% off the left side of the SVG) */
   }
-  
-  @keyframes moveImage {
-    0% {
-      transform: translateX(450%); /* Start position (100% off the right side of the SVG) */
-    }
-    100% {
-      transform: translateX(-450%); /* End position (20% off the left side of the SVG) */
-    }
-  }
-  
+}

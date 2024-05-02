@@ -6,7 +6,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 function MainPage() {
   const threeContainer = useRef();
   let mixer;
+  let mixer2;
   let cloud;
+  let bird;
 
   useEffect(() => {
     // Create a new scene
@@ -14,7 +16,7 @@ function MainPage() {
 
     // Create a new camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 5, 7); // Adjust camera position
+    camera.position.set(0, 3.5, 6.5); // Adjust camera position
 
     // Set the background
     const backTexture = new THREE.TextureLoader().load(process.env.PUBLIC_URL + '/images/sky.jpg');
@@ -31,7 +33,7 @@ function MainPage() {
       process.env.PUBLIC_URL + '/models/miRoom.gltf',
       (gltf) => {
         gltf.scene.rotation.y = -Math.PI / 4; // 45 degrees in radians
-        gltf.scene.position.set(0, -1, 0);
+        gltf.scene.position.set(0, -2.5, 0);
         scene.add(gltf.scene);
 
         // If the GLTF file contains animations, initialize the animation mixer
@@ -55,14 +57,46 @@ function MainPage() {
       }
     );
 
-    // Load cloud model
+    // Load bird model
+    const birdLoader = new GLTFLoader();
+    birdLoader.load(
+      process.env.PUBLIC_URL + '/models/bird.glb',
+      (gltf) => {
+        bird = gltf.scene;
+        bird.position.set(8, 2, -2);
+        bird.scale.set(0.2, 0.2, 0.2);
+        scene.add(bird);
+        // If the GLTF file contains animations, initialize the animation mixer
+        if (gltf.animations && gltf.animations.length) {
+          mixer2 = new THREE.AnimationMixer(bird);
+
+          // Add all animations to the mixer
+          for (let i = 0; i < gltf.animations.length; i++) {
+            const animation = gltf.animations[i];
+            mixer2.clipAction(animation).play(); // Play each animation
+          }
+        }
+        
+      },
+      // Progress callback (optional)
+      (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+      },
+      // Error callback
+      (error) => {
+        console.error('Error loading cloud model', error);
+      }
+    );
+
+    // Load the second cloud
     const cloudLoader = new GLTFLoader();
-    cloudLoader.load(
+     cloudLoader.load(
       process.env.PUBLIC_URL + '/models/cloud.glb',
       (gltf) => {
-        cloud = gltf.scene;
-        cloud.position.set(10, 2, -2);
-        scene.add(cloud);
+        const cloud2 = gltf.scene.clone(); // Create a clone of the loaded object
+        cloud2.rotation.y = Math.PI /4; // 45 degrees in radians
+        cloud2.position.set(-7.5, 2, -2); // Set position for the second cloud
+        scene.add(cloud2); // Add the second cloud to the scene
       },
       // Progress callback (optional)
       (xhr) => {
@@ -83,12 +117,13 @@ function MainPage() {
     controls.maxPolarAngle = Math.PI / 2; // Maximum polar angle (in radians)
     controls.minAzimuthAngle = -Math.PI / 4; // Minimum azimuth angle (in radians)
     controls.maxAzimuthAngle = Math.PI / 4; // Maximum azimuth angle (in radians)
+    controls.enableZoom= false;
 
     //Light
 
     //Create a RectAreaLight
     const color = 0xfdcc6c;
-    const intensity = 50;
+    const intensity = 70;
     const width = 2;
     const height = 2;
     const rectLight = new THREE.RectAreaLight(color, intensity, width, height);
@@ -102,11 +137,27 @@ function MainPage() {
 
     // Mouse move event listener
     const onMouseMove = (event) => {
-      if (cloud) {
-        // Update cloud position based on mouse movement
-        cloud.position.x += (event.movementX * 0.001); // Adjust the factor to control the sensitivity
-        cloud.position.y -= (event.movementY * 0.001);
-        cloud.rotation.y += 0.01; // Adjust the rotation speed as needed
+      if (bird) {
+        // Get the normalized device coordinates (NDC) of the mouse position
+        const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    
+        // Convert the NDC to world coordinates
+        const vector = new THREE.Vector3(mouseX, mouseY, 0.5);
+        vector.unproject(camera);
+    
+        // Calculate the direction and distance from the camera to the mouse position
+        const dir = vector.sub(camera.position).normalize();
+        const distance = -camera.position.z / dir.z;
+    
+        // Calculate the final position of the bird
+        const pos = camera.position.clone().add(dir.multiplyScalar(distance));
+    
+        // Update the position of the bird
+        bird.position.copy(pos);
+    
+        // Rotate the bird to face the mouse cursor
+        bird.lookAt(camera.position);
       }
     };
 
@@ -118,6 +169,11 @@ function MainPage() {
       if (mixer) {
         mixer.update(0.01); // Update mixer with delta time
       }
+        // Update mixer for the second cloud (if it exists)
+      if (mixer2) {
+        mixer2.update(0.01); // Update mixer with delta time
+      }
+
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     };

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Companies.css'; 
-import ExactLogo from './ExactLogo.svg';
+import ExactLogo from './Exact_logo.svg';
 
 function Companies() {
   return (

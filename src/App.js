@@ -5,8 +5,8 @@ import MainPage from './Components/MainPage';
 function App() {
   return (
     <div className="App">
-      <Companies/>
       <MainPage />
+      <Companies/>
     </div>
 
     
