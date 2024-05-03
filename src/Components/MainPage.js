@@ -30,9 +30,10 @@ function MainPage() {
     // Load GLTF model
     const loader = new GLTFLoader();
     loader.load(
-      process.env.PUBLIC_URL + '/models/miRoom.gltf',
+      process.env.PUBLIC_URL + '/models/miRoom2.glb',
       (gltf) => {
         gltf.scene.rotation.y = -Math.PI / 4; // 45 degrees in radians
+        gltf.scene.needsUpdate = true;
         gltf.scene.position.set(0, -2.5, 0);
         scene.add(gltf.scene);
 
