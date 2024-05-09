@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className='navbar'>
       <div className='navbar-container'>
         <div className="navbar-logo">
-        <a href="/">Logo</a>
+        <img className="logo-img" src={process.env.PUBLIC_URL + '/images/Logo.svg'} alt="Example" />
         </div>
         <ul className='nav-menu'>
           <li className='nav-item'><a href="#">Home</a></li>

@@ -30,7 +30,7 @@ function MainPage() {
     // Load GLTF model
     const loader = new GLTFLoader();
     loader.load(
-      process.env.PUBLIC_URL + '/models/miRoom2.glb',
+      process.env.PUBLIC_URL + '/models/miRoom.glb',
       (gltf) => {
         gltf.scene.rotation.y = -Math.PI / 4; // 45 degrees in radians
         gltf.scene.needsUpdate = true;
@@ -119,6 +119,7 @@ function MainPage() {
     controls.minAzimuthAngle = -Math.PI / 4; // Minimum azimuth angle (in radians)
     controls.maxAzimuthAngle = Math.PI / 4; // Maximum azimuth angle (in radians)
     controls.enableZoom= false;
+    controls.enablePan = false;
 
     //Light
 
