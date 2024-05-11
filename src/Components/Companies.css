@@ -5,7 +5,7 @@
   width: auto;
   overflow: hidden; /* Ensure the overflow is hidden to hide the part of the image outside the container */
   display: flex;
-}
+  padding-bottom: 10px;}
 
 .svg-container {
   width: 100%; /* Set the width of the SVG container */
