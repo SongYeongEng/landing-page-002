@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ImageCard from './ImageCard';
 import VideoCard from './VideoCard';
 import img from './my room.png';
 
 function ShowCase() {
+  const [isMobile, setIsMobile] = useState(false);
   // Initial state with card data
   const initialCards = [
     {
@@ -51,13 +52,70 @@ function ShowCase() {
   // State to manage the order of cards
   const [cards, setCards] = useState(initialCards);
 
-  // Function to move the first card to the end
-  const moveCard = () => {
-    setCards((prevCards) => {
-      const [firstCard, ...rest] = prevCards;
-      return [...rest, firstCard];
-    });
-  };
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Check initial viewport size
+    window.addEventListener('resize', handleResize); // Listen for viewport size changes
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Clean up event listener
+    };
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col justify-center items-center">
+          {cards.slice(0, 3).map((card, index) => (
+            card.type === 'image' ? (
+              <ImageCard
+                key={index}
+                imageUrl={card.imageUrl}
+                title={card.title}
+                description={card.description}
+              />
+            ) : (
+              <VideoCard
+                key={index}
+                videoUrl={card.videoUrl}
+                autoplay={card.autoplay}
+                muted={card.muted}
+                title={card.title}
+                description={card.description}
+              />
+            )
+          ))}
+        </div>
+        <div className="mt-8"/>
+        <div className="flex flex-col justify-center items-center">
+          {cards.slice(3).map((card, index) => (
+            card.type === 'image' ? (
+              <ImageCard
+                key={index}
+                imageUrl={card.imageUrl}
+                title={card.title}
+                description={card.description}
+              />
+            ) : (
+              <VideoCard
+                key={index}
+                videoUrl={card.videoUrl}
+                autoplay={card.autoplay}
+                muted={card.muted}
+                title={card.title}
+                description={card.description}
+              />
+            )
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col justify-center items-center h-screen mt-20 px-4">
@@ -104,12 +162,6 @@ function ShowCase() {
           )
         ))}
       </div>
-      <button 
-        onClick={moveCard} 
-        className="mt-8 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-      >
-        Move Card
-      </button>
     </div>
   );
 }
