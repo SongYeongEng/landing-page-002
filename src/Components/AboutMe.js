@@ -1,18 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'tailwindcss/tailwind.css'; // Ensure you import Tailwind CSS styles
+import img from './island.svg';
+import me from './me.svg';
 
 function AboutMe() {
+  const [opacity, setOpacity] = useState(0); // Initial opacity value
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = 950; // Adjust this value as needed
+
+      // Calculate opacity based on scroll position
+      const newOpacity = 0 + (scrollPosition / maxScroll);
+      setOpacity(newOpacity < 0 ? 0 : newOpacity); // Ensure opacity doesn't go below 0
+    };
+
+    // Attach scroll event listener when component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove scroll event listener when component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array ensures effect runs only once
+
   return (
     <div className="flex h-screen">
-      <div className="flex-1">
+      <div className="flex-1 flex justify-center items-center relative">
         <img 
-          src="path-to-your-image.jpg" 
-          alt="About Me" 
-          className="w-full h-full object-cover" 
+          src={img} 
+          alt="Background" 
+          className="max-w-full max-h-full object-cover" 
+        />
+        <img 
+          src={me} 
+          alt="Overlay" 
+          className="absolute top-45 left-50 w-50 h-50 object-contain" 
+          style={{ opacity }} // Set opacity dynamically
         />
       </div>
       <div className="flex-1 flex flex-col justify-center items-center p-8">
-        <h1 className="text-4xl mb-4">About Me</h1>
+        <h1 className="text-4xl mb-4">Hello welcome to my page!</h1>
         <p className="text-lg">This is some text about me.</p>
       </div>
     </div>

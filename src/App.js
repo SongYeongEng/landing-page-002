@@ -30,8 +30,8 @@ function App() {
             <Navbar />
             <MainPage />
             <Companies />
-            <ShowCase />
             <AboutMe />
+            <ShowCase />
           </>
         )}
     </div>
