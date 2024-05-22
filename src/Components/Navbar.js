@@ -63,10 +63,10 @@ const List = styled.ul`
 const ListItem = styled.li`
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(235, 235, 235, 0.3);
+  background-color: rgba(237, 234, 222, 0.5);
   cursor:pointer;
   &:hover {
-    background-color: rgba(235, 235, 235, 0.7);
+    background-color: rgba(235, 235, 235, 0.8);
     transition: background-color 0.3s ease;
   }
 
@@ -102,10 +102,10 @@ const GithubIcon = styled.img`
 const LinkedInLink = styled.a`
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(235, 235, 235, 0.3);
+  background-color: rgba(237, 234, 222, 0.5);
 
   &:hover {
-    background-color: rgba(235, 235, 235, 0.7);
+    background-color: rgba(235, 235, 235, 0.8);
     transition: background-color 0.3s ease;
   }
 
@@ -117,10 +117,10 @@ const LinkedInLink = styled.a`
 const GithubLink = styled.a`
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(235, 235, 235, 0.3);
+  background-color: rgba(237, 234, 222, 0.5);
 
   &:hover {
-    background-color: rgba(235, 235, 235, 0.7);
+    background-color: rgba(235, 235, 235, 0.8);
     transition: background-color 0.3s ease;
   }
 

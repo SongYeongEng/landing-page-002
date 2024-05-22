@@ -7,12 +7,12 @@ function MainPage() {
   const threeContainer = useRef();
   let mixer;
   let mixer2;
-  let cloud;
   let bird;
 
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
     };
