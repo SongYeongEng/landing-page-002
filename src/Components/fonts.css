@@ -1,6 +1,18 @@
 @font-face {
     font-family: 'MonoRegular';
-    src: url('./MonoRegular.woff2') format('truetype'); /* Adjust the path accordingly */
+    src: url('./MonoRegular.woff2') format('woff2'); /* Adjust the path accordingly */
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'Cartesian';
+    src: url('./Cartesian.ttf') format('truetype'); /* Adjust the path accordingly */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Logo {
+  font-family: 'Cartesian', sans-serif;
+}
+

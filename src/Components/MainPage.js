@@ -206,7 +206,7 @@ function MainPage() {
   }, [isMobile]);
 
   return (
-    <div>
+    <div id="Home">
       {isMobile ? (
         <img src={process.env.PUBLIC_URL + '/images/mobilebg.png'} alt="Mobile Background" />
       ) : (

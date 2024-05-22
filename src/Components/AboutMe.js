@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'tailwindcss/tailwind.css'; // Ensure you import Tailwind CSS styles
 import img from './island.svg';
 import me from './me.svg';
+import './fonts.css'
 
 function AboutMe() {
   const [opacity, setOpacity] = useState(0); // Initial opacity value
@@ -26,7 +27,7 @@ function AboutMe() {
   }, []); // Empty dependency array ensures effect runs only once
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen" id="AboutMe">
       <div className="flex-1 flex justify-center items-center relative">
         <img 
           src={img} 
@@ -38,11 +39,12 @@ function AboutMe() {
           alt="Overlay" 
           className="absolute top-45 left-50 w-50 h-50 object-contain" 
           style={{ opacity }} // Set opacity dynamically
-        />
+        /> 
       </div>
-      <div className="flex-1 flex flex-col justify-center items-center p-8">
+      <div className="flex-1 flex flex-col justify-center items-center p-8 font-custom "id="AboutMe2" style={{ fontFamily: 'Cartesian, sans-serif' }}>
         <h1 className="text-4xl mb-4">Hello welcome to my page!</h1>
-        <p className="text-lg">This is some text about me.</p>
+        <p className="text-xl"> I'm Yeong Eng, a recent graduated with Computer Science Degree with a passion in IT Field.</p>
+        <p className="text-xl"> Looking for opening to put my skill into action, Thanks for visiting.</p>
       </div>
     </div>
   );

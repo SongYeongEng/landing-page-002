@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import logo from "./Logo.svg";
 import linkedin from "./whiteLinkedIn.png";
 import github from "./whiteGitHub.svg";
 import './Navbar.css';
@@ -11,6 +10,7 @@ const Section = styled.div`
   justify-content: center;
   padding: 5px;
   background-color: ${props => props.scrolled ? '#333' : 'transparent'};
+  color: ${props => props.scrolled ? 'white' : 'black'};
   transition: background-color 0.3s ease;
   position: sticky;
   top: 0;
@@ -37,7 +37,8 @@ const Links = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-
+  list-style: none;
+  font-size: 50px;
   @media (min-width: 769px) {
     flex-direction: row;
   }
@@ -45,73 +46,31 @@ const Links = styled.div`
 
 const List = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 20px;
   list-style: none;
   font-family: 'MonoRegular', sans-serif;
   font-size: 15px;
-  color: black;
-
+  /* Initially hide the list items */
   @media (min-width: 769px) {
     flex-direction: row;
   }
 `;
 
-const LogoImage = styled.img`
-  display: block;
-  width: 85%;
-  height: auto;
-  background-color: #6E80A2;
-  border-radius: 10px;
-  padding: 15px;
-  min-width: 150px;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-`;
 
-const LogoContainer = styled.div`
-  width: 50%;
-
-  &:hover {
-    ${LogoImage} {
-      background-color: #6786c2;
-      transform: scale(1.3) translateX(3px) translateY(-3px);
-      animation: glitch 0.1s infinite alternate;
-    }
-  }
-
-  &:hover {
-    ${LogoImage} {
-      background-color: #6786c2;
-      transform: scale(1.3);
-      animation: bounce 0.5s ease-in-out;
-    }
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: scale(1.3) translateY(0);
-    }
-    50% {
-      transform: scale(1.3) translateY(-10px);
-    }
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-`;
 
 const ListItem = styled.li`
   padding: 10px;
   border-radius: 10px;
   background-color: rgba(235, 235, 235, 0.3);
-
+  cursor:pointer;
   &:hover {
     background-color: rgba(235, 235, 235, 0.7);
     transition: background-color 0.3s ease;
   }
+
+  
 
   ${(props) =>
     props.hire &&
@@ -127,7 +86,6 @@ const ListItem = styled.li`
   }
 `;
 
-const StyledImage = styled.img``;
 
 const LinkedInIcon = styled.img`
   width: 15px;
@@ -136,9 +94,9 @@ const LinkedInIcon = styled.img`
 `;
 
 const GithubIcon = styled.img`
-  width: 15px;
+  width: 25px;
   height: 100%;
-  transform: scale(2.5);
+  transform: scale(2);
 `;
 
 const LinkedInLink = styled.a`
@@ -171,6 +129,10 @@ const GithubLink = styled.a`
   }
 `;
 
+const LogoItem = styled.li`
+cursor: pointer;
+`;
+
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -194,24 +156,41 @@ function Navbar() {
     window.location.href = 'mailto:esy.minmax@gmail.com';
   };
 
-  const handleProjectClick = () => {
-    const secondPageElement = document.getElementById('secondPage');
+  const handleHomeClick = () => {
+    const firstPageElement = document.getElementById('Home');
+
+    if (firstPageElement) {
+      firstPageElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  
+  const handleAboutMeClick = () => {
+    const secondPageElement = document.getElementById('AboutMe');
 
     if (secondPageElement) {
       secondPageElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  
+  const handleProjectClick = () => {
+    const thirdPageElement = document.getElementById('ShowCase');
+
+    if (thirdPageElement) {
+      thirdPageElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Section scrolled={scrolled}>
       <Container>
-        <Links>
-          <LogoContainer>
-            <LogoImage as={StyledImage} src={logo} alt="Logo" />
-          </LogoContainer>
+        <Links className="Logo">
+          <LogoItem onClick={handleHomeClick}>Yeong</LogoItem>
         </Links>
         <List>
-          <ListItem>Home</ListItem>
+          <ListItem onClick={handleHomeClick}>Home</ListItem>
+          <ListItem onClick={handleAboutMeClick}>AboutMe</ListItem>
           <ListItem onClick={handleProjectClick}>Projects</ListItem>
           <GithubLink href="https://github.com/SongYeongEng">
             <GithubIcon src={github} alt="Github" />

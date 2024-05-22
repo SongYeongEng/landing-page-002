@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import ImageCard from './ImageCard';
 import VideoCard from './VideoCard';
 import img from './my room.png';
+import wip from './wip.jpg';
 
 function ShowCase() {
   const [isMobile, setIsMobile] = useState(false);
-  // Initial state with card data
+
   const initialCards = [
     {
       type: 'image',
-      imageUrl: img,
+      imageUrl: wip,
       title: 'Grouppy',
-      description: 'The mobile app I\'m working on',
+      description: 'A react native app, im working on to group up people for discount.',
     },
     {
       type: 'video',
@@ -25,7 +26,7 @@ function ShowCase() {
       type: 'image',
       imageUrl: img,
       title: 'Landing Page no.2',
-      description: 'The site you\'re visiting right now, I did some modeling animation with Blender and 3js.',
+      description: 'Current react web app, with 3js',
     },
     {
       type: 'video',
@@ -33,13 +34,13 @@ function ShowCase() {
       autoplay: true,
       muted: true,
       title: 'VrShoppingSystem',
-      description: 'My final year project, in Unity I tried to create a VR shop environment where people can buy stuff virtually.',
+      description: 'My Finaly Year Project, where i vision the future of E-Commerce where user can buy stuff in virtual reality.',
     },
     {
       type: 'image',
       imageUrl: process.env.PUBLIC_URL + '/images/hobokun.png',
       title: 'Midnight Snack Run',
-      description: 'It\'s a very simple platform game I made in Unity, I learned how to draw pixel art too.',
+      description: 'A simple 2d Platformer game i made and hosted on https://homurash.itch.io/midnight-snack-run',
     },
     {
       type: 'image',
@@ -49,27 +50,24 @@ function ShowCase() {
     },
   ];
 
-  // State to manage the order of cards
-  const [cards, setCards] = useState(initialCards);
-
-
+  const [cards] = useState(initialCards);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Check initial viewport size
-    window.addEventListener('resize', handleResize); // Listen for viewport size changes
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize); // Clean up event listener
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   if (isMobile) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8" id="ShowCase">
         <div className="flex flex-col justify-center items-center">
           {cards.slice(0, 3).map((card, index) => (
             card.type === 'image' ? (
@@ -91,7 +89,7 @@ function ShowCase() {
             )
           ))}
         </div>
-        <div className="mt-8"/>
+        <div className="mt-8" />
         <div className="flex flex-col justify-center items-center">
           {cards.slice(3).map((card, index) => (
             card.type === 'image' ? (
@@ -118,7 +116,7 @@ function ShowCase() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen mt-20 px-4">
+    <div className="flex flex-col justify-center items-center h-screen mt-20 px-4" id="ShowCase">
       <div className="flex flex-col md:flex-row justify-center items-center">
         {cards.slice(0, 3).map((card, index) => (
           card.type === 'image' ? (
@@ -140,7 +138,7 @@ function ShowCase() {
           )
         ))}
       </div>
-      <div className="mt-8"/>
+      <div className="mt-8" />
       <div className="flex flex-col md:flex-row justify-center items-center">
         {cards.slice(3).map((card, index) => (
           card.type === 'image' ? (

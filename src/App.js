@@ -7,7 +7,6 @@ import Loading from './Components/Loading';
 import Navbar from './Components/Navbar';
 import AboutMe from './Components/AboutMe';
 
-
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -23,17 +22,17 @@ function App() {
 
   return (
     <div className="App">
-        {loading ? (
-          <Loading />
-        ) : (
-          <>
-            <Navbar />
-            <MainPage />
-            <Companies />
-            <AboutMe />
-            <ShowCase />
-          </>
-        )}
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Navbar />
+          <MainPage />
+          <Companies />
+          <AboutMe />
+          <ShowCase />
+        </>
+      )}
     </div>
   );
 }
