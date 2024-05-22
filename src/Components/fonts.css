@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'MonoRegular';
+    src: url('./MonoRegular.woff2') format('truetype'); /* Adjust the path accordingly */
+    font-weight: normal;
+    font-style: normal;
+  }
