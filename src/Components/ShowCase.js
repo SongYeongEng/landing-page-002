@@ -30,7 +30,7 @@ function ShowCase() {
     },
     {
       type: 'video',
-      videoUrl: process.env.PUBLIC_URL + '/Video/vr.mp4',
+      videoUrl: process.env.PUBLIC_URL + '/Video/vr.mov',
       autoplay: true,
       muted: true,
       title: 'VrShoppingSystem',

@@ -16,6 +16,9 @@ const Section = styled.div`
   top: 0;
   z-index: 999;
   margin-top: -170px;
+  @media screen and (max-width: 768px) {
+    margin-top: 0; /* Remove top margin for mobile devices */
+  }
 `;
 
 const Container = styled.div`
@@ -89,12 +92,15 @@ const ListItem = styled.li`
 
 const LinkedInIcon = styled.img`
   width: 15px;
+  height: auto;
   padding-top: 2px;
   transform: scale(1.3);
 `;
 
 const GithubIcon = styled.img`
   width: 25px;
+  height: auto;
+
   height: 100%;
   transform: scale(2);
 `;
