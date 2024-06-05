@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ImageCard from './ImageCard';
 import VideoCard from './VideoCard';
 import img from './my room.png';
-import wip from './wip.jpg';
+import grouppy from './Grouppy.png';
 
 function ShowCase() {
   const [isMobile, setIsMobile] = useState(false);
@@ -10,9 +10,9 @@ function ShowCase() {
   const initialCards = [
     {
       type: 'image',
-      imageUrl: wip,
+      imageUrl: grouppy,
       title: 'Grouppy',
-      description: 'A react native app, im working on to group up people for discount.',
+      description: 'Full stack app, React Native, Spring Boot and Mysql. Group up with people enjoy discount, working on it updating consistenly.',
     },
     {
       type: 'video',
