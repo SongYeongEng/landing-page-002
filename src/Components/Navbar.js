@@ -93,6 +93,8 @@ const ListItem = styled.li`
 const LinkedInIcon = styled.img`
   width: 15px;
   height: auto;
+  min-width: 15px; 
+  min-height: 15px;
   padding-top: 2px;
   transform: scale(1.3);
 `;
@@ -100,7 +102,8 @@ const LinkedInIcon = styled.img`
 const GithubIcon = styled.img`
   width: 25px;
   height: auto;
-
+  min-width: 15px; 
+  min-height: 15px;
   height: 100%;
   transform: scale(2);
 `;
