@@ -42,7 +42,7 @@ const Links = styled.div`
   gap: 20px;
   list-style: none;
   font-size: 50px;
-  @media (min-width: 769px) {
+  @media (max-width: 769px) {
     flex-direction: row;
   }
 `;
@@ -50,6 +50,7 @@ const Links = styled.div`
 const List = styled.ul`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   list-style: none;
@@ -58,6 +59,10 @@ const List = styled.ul`
   /* Initially hide the list items */
   @media (min-width: 769px) {
     flex-direction: row;
+  }
+  @media (max-width: 769px) {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 
@@ -93,8 +98,6 @@ const ListItem = styled.li`
 const LinkedInIcon = styled.img`
   width: 15px;
   height: auto;
-  min-width: 15px; 
-  min-height: 15px;
   padding-top: 2px;
   transform: scale(1.3);
 `;
@@ -102,8 +105,6 @@ const LinkedInIcon = styled.img`
 const GithubIcon = styled.img`
   width: 25px;
   height: auto;
-  min-width: 15px; 
-  min-height: 15px;
   height: 100%;
   transform: scale(2);
 `;
