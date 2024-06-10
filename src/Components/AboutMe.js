@@ -43,8 +43,9 @@ function AboutMe() {
       </div>
       <div className="flex-1 flex flex-col justify-center items-center p-8 font-custom "id="AboutMe2" style={{ fontFamily: 'Cartesian, sans-serif' }}>
         <h1 className="text-4xl mb-4">Hello welcome to my page!</h1>
-        <p className="text-xl"> Hello, I'm Yeong Eng, a recent Computer Science graduate with a deep passion for the IT field. </p>
-        <p className="text-xl"> am Currently looking for job opening to put my skill into action, Thanks for visiting.</p>
+        <p className="text-xl"> Hello, I'm Yeong Eng, a recent Computer Science graduate. </p>
+        <p className="text-xl"> I'm currently open to job opportunities where I can grow and contribute.</p>
+        <p className="text-xl"> Feel free to reach out if you think we could work together. Thanks for visiting!</p>
       </div>
     </div>
   );
