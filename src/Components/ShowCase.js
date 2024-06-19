@@ -116,7 +116,7 @@ function ShowCase() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen mt-20 px-4" id="ShowCase">
+    <div className="flex flex-col justify-center items-center h-screen mt-20 px-4"style={{ marginTop: '100px' }} id="ShowCase">
       <div className="flex flex-col md:flex-row justify-center items-center">
         {cards.slice(0, 3).map((card, index) => (
           card.type === 'image' ? (

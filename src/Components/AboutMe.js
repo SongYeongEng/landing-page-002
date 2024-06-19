@@ -27,7 +27,7 @@ function AboutMe() {
   }, []); // Empty dependency array ensures effect runs only once
 
   return (
-    <div className="flex h-screen" id="AboutMe">
+    <div className="flex h-screen " id="AboutMe">
       <div className="flex-1 flex justify-center items-center relative">
         <img 
           src={img} 
@@ -37,7 +37,7 @@ function AboutMe() {
         <img 
           src={me} 
           alt="Overlay" 
-          className="absolute top-45 left-50 w-50 h-50 object-contain" 
+          className="absolute top-45 left-50 w-42 h-42 object-contain" 
           style={{ opacity }} // Set opacity dynamically
         /> 
       </div>
