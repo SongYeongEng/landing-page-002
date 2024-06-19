@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/landing-page-002/static/css/main.94311329.css",
-    "main.js": "/landing-page-002/static/js/main.fe795742.js",
+    "main.css": "/landing-page-002/static/css/main.5a6732ec.css",
+    "main.js": "/landing-page-002/static/js/main.13557ff3.js",
     "static/js/453.7b7703e6.chunk.js": "/landing-page-002/static/js/453.7b7703e6.chunk.js",
     "static/media/island.svg": "/landing-page-002/static/media/island.66423d8fe9728d3250d67cf663417ef2.svg",
     "static/media/my room.png": "/landing-page-002/static/media/my room.ec45972000d33d0d5bdd.png",
-    "static/media/me.svg": "/landing-page-002/static/media/me.db3d5179719aa8309d48d2b08ea68e35.svg",
+    "static/media/me.svg": "/landing-page-002/static/media/me.8499e6484406424bf1e7046b005563db.svg",
     "static/media/Grouppy.png": "/landing-page-002/static/media/Grouppy.14070d102ffd30631bfe.png",
     "static/media/boat.svg": "/landing-page-002/static/media/boat.7ffb8c1ceb2caa2140dc0516674461c8.svg",
     "static/media/MonoRegular.woff2": "/landing-page-002/static/media/MonoRegular.4b87e0b82ab958e96d2c.woff2",
@@ -13,12 +13,12 @@
     "static/media/whiteGitHub.svg": "/landing-page-002/static/media/whiteGitHub.ce47d33915b3c6f9ab217ae8b7a8118d.svg",
     "static/media/Exact_logo.svg": "/landing-page-002/static/media/Exact_logo.ea8b0493f12dd2738bd721ccf46f2cc6.svg",
     "index.html": "/landing-page-002/index.html",
-    "main.94311329.css.map": "/landing-page-002/static/css/main.94311329.css.map",
-    "main.fe795742.js.map": "/landing-page-002/static/js/main.fe795742.js.map",
+    "main.5a6732ec.css.map": "/landing-page-002/static/css/main.5a6732ec.css.map",
+    "main.13557ff3.js.map": "/landing-page-002/static/js/main.13557ff3.js.map",
     "453.7b7703e6.chunk.js.map": "/landing-page-002/static/js/453.7b7703e6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.94311329.css",
-    "static/js/main.fe795742.js"
+    "static/css/main.5a6732ec.css",
+    "static/js/main.13557ff3.js"
   ]
 }
