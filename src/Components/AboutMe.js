@@ -37,7 +37,7 @@ function AboutMe() {
         <img 
           src={me} 
           alt="Overlay" 
-          className="absolute top-45 left-50 w-42 h-42 object-contain" 
+          className="absolute top-45 left-50 w-41 h-41 object-contain" 
           style={{ opacity }} // Set opacity dynamically
         /> 
       </div>
