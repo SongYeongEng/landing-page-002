@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/landing-page-002/static/css/main.5a6732ec.css",
-    "main.js": "/landing-page-002/static/js/main.ba7916f1.js",
+    "main.js": "/landing-page-002/static/js/main.faddb315.js",
     "static/js/453.7b7703e6.chunk.js": "/landing-page-002/static/js/453.7b7703e6.chunk.js",
     "static/media/island.svg": "/landing-page-002/static/media/island.66423d8fe9728d3250d67cf663417ef2.svg",
     "static/media/my room.png": "/landing-page-002/static/media/my room.ec45972000d33d0d5bdd.png",
@@ -10,15 +10,16 @@
     "static/media/boat.svg": "/landing-page-002/static/media/boat.7ffb8c1ceb2caa2140dc0516674461c8.svg",
     "static/media/MonoRegular.woff2": "/landing-page-002/static/media/MonoRegular.4b87e0b82ab958e96d2c.woff2",
     "static/media/Cartesian.ttf": "/landing-page-002/static/media/Cartesian.18086a4803e666c10478.ttf",
+    "static/media/Accenture.svg": "/landing-page-002/static/media/Accenture.4cb2ec4154b91561f5b5c67da1400de8.svg",
     "static/media/whiteGitHub.svg": "/landing-page-002/static/media/whiteGitHub.ce47d33915b3c6f9ab217ae8b7a8118d.svg",
     "static/media/Exact_logo.svg": "/landing-page-002/static/media/Exact_logo.ea8b0493f12dd2738bd721ccf46f2cc6.svg",
     "index.html": "/landing-page-002/index.html",
     "main.5a6732ec.css.map": "/landing-page-002/static/css/main.5a6732ec.css.map",
-    "main.ba7916f1.js.map": "/landing-page-002/static/js/main.ba7916f1.js.map",
+    "main.faddb315.js.map": "/landing-page-002/static/js/main.faddb315.js.map",
     "453.7b7703e6.chunk.js.map": "/landing-page-002/static/js/453.7b7703e6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5a6732ec.css",
-    "static/js/main.ba7916f1.js"
+    "static/js/main.faddb315.js"
   ]
 }
